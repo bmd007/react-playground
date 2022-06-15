@@ -7,7 +7,7 @@ export default class CounterCubit extends BaseCubit<CounterState>{
         super(initialValue)
     }
 
-    increment (){
+    increment() {
         this.emitNextState(this.getCurrentState().increase());
     };
 };
