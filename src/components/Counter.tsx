@@ -1,21 +1,22 @@
 import {CounterState} from "../blocs/counter/counterState";
-import CounterBloc from "../blocs/counter/counterBloc";
-import {Fragment} from "react";
+import {Component, Fragment} from "react";
 import StreamBuilder from "../utils/StreamBuilder";
+import CounterBloc from "../blocs/counter/counterBloc";
 
-
-const bloc = new CounterBloc(CounterState.loading());
-
-const Counter = () => (
-    <Fragment>
-        <button onClick={() => bloc.increment()}>+</button>
-        Count:
-        <StreamBuilder
-            initialState={bloc.initialValue}
-            stream={ bloc.subject}
-            builder={(snapshot: CounterState) => <p>{snapshot.value}</p>}
-        />
-    </Fragment>
-);
+class Counter extends Component<{ bloc: CounterBloc }> {
+    render() {
+        return (
+            <Fragment>
+                <button onClick={() => this.props.bloc.increment()}>+</button>
+                Count:
+                <StreamBuilder
+                    initialState={this.props.bloc.initialValue}
+                    stream={this.props.bloc.subject}
+                    builder={(snapshot: CounterState) => <p>{snapshot.value}</p>}
+                />
+            </Fragment>
+        );
+    }
+}
 
 export default Counter;
