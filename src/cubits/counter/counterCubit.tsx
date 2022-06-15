@@ -8,13 +8,6 @@ export default class CounterCubit extends BaseCubit<CounterState>{
     }
 
     increment (){
-        this.subject.next(this.subject.value.increase());
+        this.emitNextState(this.getCurrentState().increase());
     };
-
-    //the error function with deal with sending an error through the subject
-    errorSimulation(){
-        this.subject.error("An error simulation");
-    };
-
-}
-;
+};

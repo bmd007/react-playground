@@ -11,7 +11,7 @@ class Counter extends Component<{ cubit: CounterCubit }> {
                 Count:
                 <StreamBuilder
                     initialState={this.props.cubit.initialValue}
-                    stream={this.props.cubit.subject}
+                    stream={this.props.cubit.stateStream}
                     builder={(snapshot: CounterState) => <p>{snapshot.value}</p>}
                 />
             </Fragment>

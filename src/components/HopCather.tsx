@@ -8,7 +8,7 @@ class HopCatcher extends Component<{ cubit: CounterCubit }> {
         return (
             <StreamBuilder
                 initialState={this.props.cubit.initialValue}
-                stream={this.props.cubit.subject}
+                stream={this.props.cubit.stateStream}
                 builder={(snapshot: CounterState) => {
                     if (snapshot.value % 5 === 0) {
                         alert("hope on ".concat(snapshot.value.toString()))
