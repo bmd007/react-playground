@@ -11,11 +11,11 @@ export default class BaseCubit<T> {
         this.stateStream = new rxjs.BehaviorSubject<T>(initialValue);
     }
 
-    public getCurrentState(): T{
+    public getCurrentState(): T {
         return this.stateStream.value;
     }
 
-    public emitNextState(next: T): void{
+    public emitNextState(next: T): void {
         this.stateStream.next(next);
     }
 

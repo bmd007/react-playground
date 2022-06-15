@@ -1,6 +1,6 @@
 import {CubitBaseState} from "../../utils/cubitBaseState";
 
-export class CounterState extends CubitBaseState{
+export class CounterState extends CubitBaseState {
 
     public readonly value: number;
 
