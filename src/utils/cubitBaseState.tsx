@@ -1,4 +1,4 @@
-export class BlocBaseState {
+export class CubitBaseState {
 
     public readonly isLoading: boolean;
     public readonly error: Error;
@@ -9,6 +9,6 @@ export class BlocBaseState {
     }
 
     static loading() {
-        return new BlocBaseState(null, true);
+        return new CubitBaseState(null, true);
     };
 }

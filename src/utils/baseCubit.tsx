@@ -1,8 +1,6 @@
 import * as rxjs from 'rxjs';
 
-export default class BaseBloc<T> {
-    //todo support for events (bloc rather than cubit)
-
+export default class BaseCubit<T> {
     public subject;
     public initialValue;
 

@@ -3,22 +3,22 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import "bootstrap/dist/css/bootstrap.css"
 import Counter from "./components/Counter";
-import CounterBloc from "./blocs/counter/counterBloc";
-import {CounterState} from "./blocs/counter/counterState";
+import {CounterState} from "./cubits/counter/counterState";
 import HopCatcher from "./components/HopCather";
+import CounterCubit from "./cubits/counter/counterCubit";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
-const bloc = new CounterBloc(CounterState.loading());
+const cubit = new CounterCubit(CounterState.loading());
 
 root.render(
     <div className="App">
       <header className="App-header">
-          <Counter bloc={bloc}/>
+          <Counter cubit={cubit}/>
           <line></line>
-          <HopCatcher bloc={bloc}/>
+          <HopCatcher cubit={cubit}/>
       </header>
     </div>
 );

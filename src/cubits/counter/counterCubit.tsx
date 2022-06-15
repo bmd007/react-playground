@@ -1,7 +1,7 @@
 import {CounterState} from "./counterState";
-import BaseBloc from "../../utils/baseBloc";
+import BaseCubit from "../../utils/baseCubit";
 
-export default class CounterBloc extends BaseBloc<CounterState>{
+export default class CounterCubit extends BaseCubit<CounterState>{
 
     constructor(initialValue: CounterState) {
         super(initialValue)

@@ -1,8 +1,8 @@
 import {Component, Fragment, ReactNode} from 'react';
-import {BlocBaseState} from "./blocBaseState";
+import {CubitBaseState} from "./cubitBaseState";
 import {BehaviorSubject} from "rxjs";
 
-type StreamBuilderProperties<T extends BlocBaseState> = {
+type StreamBuilderProperties<T extends CubitBaseState> = {
     initialState: T,
     stream: BehaviorSubject<T>,
     builder: (snapshot: T) => ReactNode
@@ -12,7 +12,7 @@ type StreamBuilderState<T> = {
     snapshot: T
 }
 
-export default class StreamBuilder<T extends BlocBaseState> extends Component<StreamBuilderProperties<T>, StreamBuilderState<T>> {
+export default class StreamBuilder<T extends CubitBaseState> extends Component<StreamBuilderProperties<T>, StreamBuilderState<T>> {
 
     componentWillMount() {
         this.state = {

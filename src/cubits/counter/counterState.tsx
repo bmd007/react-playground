@@ -1,6 +1,6 @@
-import {BlocBaseState} from "../../utils/blocBaseState";
+import {CubitBaseState} from "../../utils/cubitBaseState";
 
-export class CounterState extends BlocBaseState{
+export class CounterState extends CubitBaseState{
 
     public readonly value: number;
 
@@ -11,7 +11,7 @@ export class CounterState extends BlocBaseState{
     }
 
     static loading() {
-        return new CounterState(Number.MIN_VALUE, null, true);
+        return new CounterState(1, null, true);
     };
 
     initialize(initialNumber: number) {

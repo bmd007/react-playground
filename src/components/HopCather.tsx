@@ -1,19 +1,19 @@
-import {CounterState} from "../blocs/counter/counterState";
+import {CounterState} from "../cubits/counter/counterState";
 import StreamBuilder from "../utils/StreamBuilder";
 import {Component} from "react";
-import CounterBloc from "../blocs/counter/counterBloc";
+import CounterCubit from "../cubits/counter/counterCubit";
 
-class HopCatcher extends Component<{ bloc: CounterBloc }> {
+class HopCatcher extends Component<{ cubit: CounterCubit }> {
     render() {
         return (
             <StreamBuilder
-                initialState={this.props.bloc.initialValue}
-                stream={this.props.bloc.subject}
+                initialState={this.props.cubit.initialValue}
+                stream={this.props.cubit.subject}
                 builder={(snapshot: CounterState) => {
                     if (snapshot.value % 5 === 0) {
                         alert("hope on ".concat(snapshot.value.toString()))
                     }
-                    return <p>hhhmm, waiting</p>
+                    return null;
                 }}
             />
         );

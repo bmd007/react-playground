@@ -1,17 +1,17 @@
-import {CounterState} from "../blocs/counter/counterState";
+import {CounterState} from "../cubits/counter/counterState";
 import {Component, Fragment} from "react";
 import StreamBuilder from "../utils/StreamBuilder";
-import CounterBloc from "../blocs/counter/counterBloc";
+import CounterCubit from "../cubits/counter/counterCubit";
 
-class Counter extends Component<{ bloc: CounterBloc }> {
+class Counter extends Component<{ cubit: CounterCubit }> {
     render() {
         return (
             <Fragment>
-                <button onClick={() => this.props.bloc.increment()}>+</button>
+                <button onClick={() => this.props.cubit.increment()}>+</button>
                 Count:
                 <StreamBuilder
-                    initialState={this.props.bloc.initialValue}
-                    stream={this.props.bloc.subject}
+                    initialState={this.props.cubit.initialValue}
+                    stream={this.props.cubit.subject}
                     builder={(snapshot: CounterState) => <p>{snapshot.value}</p>}
                 />
             </Fragment>
